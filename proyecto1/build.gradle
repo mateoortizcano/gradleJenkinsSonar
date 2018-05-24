@@ -2,6 +2,8 @@ apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'jacoco'
 
+
+version = '1.0'
 sourceCompatibility = 1.8
 
 repositories {
@@ -19,3 +21,21 @@ dependencies {
 	testCompile group: 'org.jacoco', name: 'org.jacoco.agent', version: '0.7.9'
 	
 }
+
+jar {
+	manifest {
+	attributes 'Implementation-Tittle': 'proyecto1',
+				'Implementation-Version': version
+	}
+}
+
+test {
+	jacoco {
+		append = false
+		destinationFile = file("jacoco/jacocoTest.exec")
+	}
+	reports.junitXml.destination = file("jacoco/test-results")
+}
+
+
+
