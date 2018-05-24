@@ -8,7 +8,7 @@ import org.mockito.Mockito;
 import co.ceiba.domain.Person;
 import co.ceiba.testdatabuilder.PersonTestDataBuilder;
 
-public class NitifyPersonServiceTest {
+public class NotifyPersonServiceTest {
 	
 	private NotifyPersonService notifyPersonService;
 	private EmailService emailService;
@@ -27,7 +27,7 @@ public class NitifyPersonServiceTest {
 		//Act
 		String message = notifyPersonService.notify(person);
 		//Assert
-		Assert.assertNotNull(message);
+		Assert.assertNull(message);
 		System.out.println(message);
 	}
 }
